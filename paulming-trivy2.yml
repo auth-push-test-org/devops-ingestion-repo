@@ -1,0 +1,45 @@
+trigger: none
+
+pool:
+  name: paulming-linux
+
+variables:
+  - name: System.Debug
+    value: true
+  - name: GDN_LOGGERLEVEL
+    value: Trace
+  - name: CONTAINER_NAME
+    value: testcontainer
+  - name: IMAGE_TO_SCAN
+    value: azurecspmdevtest1test.azurecr.io/$(CONTAINER_NAME):$(Build.BuildId)
+  - name: TRIVY_LOG_FILE
+    value: $(Build.SourcesDirectory)/getting-started-linux.json
+
+steps:
+- task: Docker@2
+  inputs:
+   containerRegistry: 'CSPMDevTest1Test'
+   repository: $(CONTAINER_NAME)
+   command: 'build'
+   Dockerfile: 'SecureApp/containers/trivy-ci-test/Dockerfile'
+- task: paulmingMSCA@1
+  inputs:
+    config: 'trivy-paulming'
+- task: Docker@2
+  inputs:
+   containerRegistry: 'CSPMDevTest1Test'
+   repository: $(CONTAINER_NAME)
+   command: push
+- task: PublishPipelineArtifact@1
+  inputs:
+    targetPath: '$(TRIVY_LOG_FILE)'
+    artifactName: 'containerScanLog'
+- task: paulmingpublish-security-assessments@0
+  inputs:
+    imageName: '$(IMAGE_TO_SCAN)'
+    artifactType: 'containerImage'
+    artifactId: 'aoeu'
+    subscriptionToken: '89ecc633-9f4f-4b4f-9a5e-d5c6ed21eeac.89ecc633-9f4f-4b4f-9a5e-d5c6ed21eeac'
+    connectionString: 'InstrumentationKey=1f6ff11b-6192-4516-ac37-85c7e1ba87d2;IngestionEndpoint=https://westus2-2.in.applicationinsights.azure.com/'
+    scanProvider: 'trivy'
+    scanResultsPath: '$(TRIVY_LOG_FILE)'

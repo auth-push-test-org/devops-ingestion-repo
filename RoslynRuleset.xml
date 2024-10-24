@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RuleSet Name="SDL Recommended Rules" Description="These rules focus on the most critical security problems in your code. You should include this rule set in any custom rule set you create for your projects." ToolsVersion="14.0">
+  <Rules AnalyzerId="System.Security.Cryptography.Hashing.Algorithms.CSharp.Analyzers" RuleNamespace="System.Security.Cryptography.Hashing.Algorithms.CSharp.Analyzers">
+    <Rule Id="CA5350" Action="Warning" />
+    <Rule Id="CA5351" Action="Error" />
+  </Rules>
+</RuleSet>

@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfContentSearcher xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ContentSearcher>
+    <Name>DeveloperTest</Name>
+    <ResourceMatchPattern>\.cs$</ResourceMatchPattern>
+    <ContentSearchPatterns>
+        <string>Hello\, CredScan\!</string>
+    </ContentSearchPatterns>
+    <MatchDetails>Found additional string I was looking for.</MatchDetails>
+    <Recommendation>Using custom searchers is unsupported.</Recommendation>
+    <Severity>1</Severity>
+  </ContentSearcher>
+  <ContentSearcher>
+    <Name>JSON Credential</Name>
+    <ResourceMatchPattern>\.json$</ResourceMatchPattern>
+    <ContentSearchPatterns>      
+      <string>['"]data['"]\s*:\s*['"]\S+['"]\s*,[^'"]+['"]dataType['"]\s*:\s*['"](pfx|p12|pem|pvk)['"]</string>
+    </ContentSearchPatterns>    
+    <MatchDetails>Found credentials in .json file.</MatchDetails>
+    <Recommendation>Validate file contains secrets, remove, and roll. For additional information on secret remediation see https://aka.ms/credscan </Recommendation>
+    <Severity>1</Severity>
+  </ContentSearcher>
+  <ContentSearcher>
+    <Name>Publishsettings</Name>
+    <ResourceMatchPattern>\.publishsettings$</ResourceMatchPattern>
+    <ContentSearchPatterns>
+      <string>(ManagementCertificate="(([A-Za-z0-9+/]{4})*([A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{2}==)?){1}")|(Id="\b[A-F0-9]{8}(?:-[A-F0-9]{4}){3}-[A-F0-9]{12}\b")|(Name="[ -~^"]+")</string>
+    </ContentSearchPatterns>
+    <MatchDetails>Found a publish settings file with potentially sensitive information.</MatchDetails>
+    <Recommendation>Validate file contains secrets, remove, and roll. Remove publish settings file from code repo or share. For additional information on secret remediation see https://aka.ms/credscan </Recommendation>
+    <Severity>3</Severity>
+    <CaptureMode>All</CaptureMode>
+  </ContentSearcher>
+  <!--<ContentSearcher>
+    <Name>CodeConnStrings</Name>
+    <ResourceMatchPattern>\.cs$</ResourceMatchPattern>
+    <ContentSearchPatterns>
+      <string>StorageCredentials\(.*?,\s?".*?"</string>
+      <string>\n.*(>|'|=|")[a-zA-Z0-9/+]{86}==</string>
+      <string>\n.*(>|'|=|")[a-zA-Z0-9/+]{43}=[^{@]</string>
+      <string>\n.*(>|'|=|")[a-zA-Z0-9%]{43,53}%3d[^a-zA-Z0-9%]</string>
+      <string>\n.*(User ID|uid|UserId).*(Password|[^a-z]pwd)=[^$%&gt;@";\[\{][^;/"]{7,128}(;|")</string>
+    </ContentSearchPatterns>
+    <MatchDetails>Found storage credential in source file.</MatchDetails>
+    <Recommendation>Validate file contains secrets, remove, and roll. For additional information on secret remediation see https://aka.ms/credscan </Recommendation>
+    <Severity>3</Severity>
+  </ContentSearcher>-->
+  <ContentSearcher>
+    <Name>PFX files</Name>
+    <ResourceMatchPattern>\.pfx$</ResourceMatchPattern>
+    <MatchDetails>Found PFX certificate.</MatchDetails>
+    <Recommendation>Remove certificate from repo or share, roll credential, and use approved store. For additional information on secret remediation see https://aka.ms/credscan </Recommendation>
+    <Severity>3</Severity>
+  </ContentSearcher>
+  <ContentSearcher>
+    <Name>PEM Files</Name>
+    <ResourceMatchPattern>\.pem$</ResourceMatchPattern>
+    <ContentSearchPatterns>
+      <string>-----BEGIN\sRSA\sPRIVATE\sKEY-----</string>
+    </ContentSearchPatterns>
+    <MatchDetails>Found PEM certificate with private key</MatchDetails>
+    <Recommendation>Validate file contains secret, remove, roll credential, and use approved store. For additional information on secret remediation see https://aka.ms/credscan </Recommendation>
+    <Severity>3</Severity>
+  </ContentSearcher>
+  <ContentSearcher>
+    <Name>PVK Files</Name>
+    <ResourceMatchPattern>\.pvk$</ResourceMatchPattern>
+    <MatchDetails>Found PVK file</MatchDetails>
+    <Recommendation>Validate file contains secret, remove, roll credential, and use approved store. For additional information on secret remediation see https://aka.ms/credscan </Recommendation>
+    <Severity>3</Severity>
+  </ContentSearcher>
+  <ContentSearcher>
+    <Name>Securityconfig</Name>
+    <ResourceMatchPattern>securityconfig\.xml$</ResourceMatchPattern>
+    <ContentSearchPatterns>
+      <string>&lt;certificate&gt;[ -~\r\n\t]+&lt;/certificate&gt;</string>
+    </ContentSearchPatterns>
+    <MatchDetails>Found Securityconfig file with certificate</MatchDetails>
+    <Recommendation>Validate file contains secret, remove, roll credential, and use approved store. For additional information on secret remediation see https://aka.ms/credscan </Recommendation>
+    <Severity>3</Severity>
+  </ContentSearcher>
+  <ContentSearcher>
+    <Name>Config-Files</Name>
+    <ResourceMatchPattern>(\.config|\.cscfg)$</ResourceMatchPattern>
+    <ContentSearchPatterns>
+      <string>&lt;machineKey[^&gt;]+&gt;</string>
+      <string>(decryptionKey|validationKey)=&quot;[a-zA-Z0-9]+&quot;</string>
+      <string>&lt;connectionstrings[ -~\s\r\n\t]+Password[ -~\s\r\n\t]+&lt;/connectionstrings&gt;</string>
+      <string>(connectionstring|connString).*=.*(Password|Key).*(\x22|\x27)</string>
+      <!-- Removed pass from build list. Too many false positive-->
+      <!--pass|-->
+      <string>&lt;add\skey=&quot;[ -~]+(key|credential|secret|token)[ -~]+&quot;[^&gt;]+?/&gt;</string>
+      <string>value\s?=\s?&quot;((([A-Za-z0-9+/]){4}){1,200})==&quot;</string>
+      <!-- Varunsh: Adding new base64 and SQL connection string searcher patterns for config files -->
+      <string>\n.*(>|'|=|")[a-zA-Z0-9/+]{86}==</string>
+      <string>\n.*(>|'|=|")[a-zA-Z0-9/+]{43}=[^{@]</string>
+      <string>\n.*(>|'|=|")[a-zA-Z0-9%]{43,53}%3d[^a-zA-Z0-9%]</string>
+      <string>\n.*(User ID|uid|UserId).*(Password|[^a-z]pwd)=[^$%&gt;@";\[\{][^;/"]{7,128}(;|")</string>
+    </ContentSearchPatterns>
+    <ContentSearchFilters>
+      <ContentFilter>
+        <Name>Transform ContentFilters</Name>
+        <Filters>
+          <string>xdt:Transform.*?value="@\(.*?\)"</string>
+          <string>value="@\(.*?\)".*?xdt:Transform</string>
+        </Filters>
+      </ContentFilter>
+    </ContentSearchFilters>
+    <MatchDetails>Found .config file matching known credential pattern</MatchDetails>
+    <Recommendation>Validate file contains secrets, remove, roll credential, and use approved store. For additional information on secret remediation see https://aka.ms/credscan </Recommendation>
+    <Severity>3</Severity>
+  </ContentSearcher>  
+  <ContentSearcher>
+    <Name>RunnerSVC-MDS</Name>
+    <ResourceMatchPattern>runnersvc\.</ResourceMatchPattern>
+    <ContentSearchPatterns>
+      <string>&lt;XstoreAccountInfos&gt;[ -~&quot;\s\S\n\r\t]+&lt;/XstoreAccountInfos&gt;</string>
+    </ContentSearchPatterns>
+    <MatchDetails>Found runnersvc file with possible storage account</MatchDetails>
+    <Recommendation>Validate file contains secrets, remove, roll credential, and use approved store. For additional information on secret remediation see https://aka.ms/credscan </Recommendation>
+    <Severity>3</Severity>
+  </ContentSearcher>
+  <ContentSearcher>
+    <Name>Script -Password</Name>
+    <ResourceMatchPattern>(\.cmd|\.ps|\.ps1|\.psm1)$</ResourceMatchPattern>
+    <ContentSearchPatterns>
+      <string>\s-Password\s([^$]+)</string>
+    </ContentSearchPatterns>
+    <MatchDetails>Found script with possible password</MatchDetails>
+    <Recommendation>Validate file contains secrets, remove, roll credential, and use approved store. For additional information on secret remediation see https://aka.ms/credscan </Recommendation>
+    <Severity>3</Severity>
+  </ContentSearcher>
+  <ContentSearcher>
+    <Name>External APIs Specific</Name>
+    <ResourceMatchPattern>\.cs$|\.cpp$|\.c$</ResourceMatchPattern>
+    <ContentSearchPatterns>
+      <string>private\sconst\sstring\sAccessTokenSecret\s=\s".*";</string>
+      <string>private\sconst\sstring\saccessToken\s=\s".*";</string>
+      <string>private\sconst\sstring\sconsumerSecret\s=\s".*";</string>
+      <string>private\sconst\sstring\sconsumerKey\s=\s".*";</string>
+      <string>FacebookClient\(pageAccessToken\);</string>
+      <string>pageAccessToken\s=\s".*";</string>
+      <string>private\sstring\stwilioAccountSid\s=\s".*";</string>
+      <string>private\sstring\stwilioAuthToken\s=\s".*";</string>
+    </ContentSearchPatterns>
+    <MatchDetails>Found source file with potential external API secrets</MatchDetails>
+    <Recommendation>Validate file contains secrets, remove, roll credential, and use approved store. For additional information on secret remediation see https://aka.ms/credscan </Recommendation>
+    <Severity>3</Severity>
+  </ContentSearcher>
+  <ContentSearcher>
+    <Name>MonitoringAgent</Name>
+    <ResourceMatchPattern>AgentConfig\.xml$</ResourceMatchPattern>
+    <ContentSearchPatterns>
+      <string>Account moniker\s?=.*key\s?=.*</string>
+    </ContentSearchPatterns>
+    <MatchDetails>Found MonitoringAgent config file matching known credential pattern</MatchDetails>
+    <Recommendation>Validate file contains secrets, remove, roll credential, and use approved store. For additional information on secret remediation see https://aka.ms/credscan </Recommendation>
+    <Severity>3</Severity>
+  </ContentSearcher>
+  <ContentSearcher>
+    <Name>Default Passwords</Name>
+    <ResourceMatchPattern>\.cs$|\.c$|\.cpp$|\.xml$|\.config$|\.txt$|\.ps1$|\.ps$|\.cmd$|\.bat$|\.log$|\.json$|\.js$|\.ts$</ResourceMatchPattern>
+    <ContentSearchPatterns>      
+      <string>(\!\!123ab|\!P@ssW0rd1|\!Password1|abc@123|admin123|admin1234|coMmac\!12|Y29NbWFjITEy|homerrocks|iis6\!dfu|J\$p1ter|P@\$\$w0rd1|P@ssw0rd1|p@ssword1|P0rsche911|Pa\$\$w0rd1|Pa\$\$word1|Pa\$\$word1\!|Pa55word1|pass@word1|pass@word1\!|Pass4Sales|Passw0rd1|Password@123|rdP@\$\$w0rd|rdPa\$\$w0rd|rdPa\$\$w0rd2|rdPa\$\$word|rdPassW0rd|user@123)</string>
+    </ContentSearchPatterns>
+    <MatchDetails>Found file matching known default credentials</MatchDetails>
+    <Recommendation>Validate file contains secrets, remove, roll credential, and use approved store. For additional information on secret remediation see https://aka.ms/credscan </Recommendation>
+    <Severity>3</Severity>
+  </ContentSearcher>
+  <!-- Varunsh: Adding new base64 and SQL connection string searcher. For .cs and config files, these patterns have been added to existing searcher so that same file is not scanned again. -->
+  <ContentSearcher>
+    <Name>AzureSecrets</Name>
+    <ResourceMatchPattern>\.xml$|\.pubxml$|\.definitions$|\.ps1$|\.wadcfgx$</ResourceMatchPattern>
+    <ContentSearchPatterns>
+      <string>\n.*(>|'|=|")[a-zA-Z0-9/+]{43}=[^{@]</string>
+      <string>\n.*(>|'|=|")[a-zA-Z0-9/+]{86}==</string>
+      <string>\n.*(>|'|=|")[a-zA-Z0-9%]{43,53}%3d[^a-zA-Z0-9%]</string>
+      <string>\n.*(User ID|uid|UserId).*(Password|[^a-z]pwd)=[^$%&gt;@";\[\{][^;/"]{7,128}(;|")</string>
+    </ContentSearchPatterns>
+    <MatchDetails>Found secret key, SAS or SQL connection string with password</MatchDetails>
+    <Recommendation>Validate file contains secrets, remove, roll credential, use an approved secret store.</Recommendation>
+    <Severity>3</Severity>
+  </ContentSearcher>
+  <ContentSearcher>
+    <Name>Domain Passwords</Name>
+    <ResourceMatchPattern>\.cs$|\.c$|\.cpp$|\.ps1$|\.ps$|\.cmd$|\.bat$|\.log$|\.psd$</ResourceMatchPattern>
+    <ContentSearchPatterns>
+      <string>NetworkCredential\(.*,.*,(corp|europe|middleeast|northamerica|southpacific|southamerica|fareast|africa|redmond|exchange|extranet|partners|extranettest|parttest|noe|ntdev|ntwksta|sys\-wingroup|windeploy|wingroup|winse|segroup|xcorp|xrep|phx|gme|usme|cdocidm|mslpa)\\.*</string>
+      <string>net\suse.*\/u\:(corp|europe|middleeast|northamerica|southpacific|southamerica|fareast|africa|redmond|exchange|extranet|partners|extranettest|parttest|noe|ntdev|ntwksta|sys\-wingroup|windeploy|wingroup|winse|segroup|xcorp|xrep|phx|gme|usme|cdocidm|mslpa)\\.*</string>
+      <string>schtasks.*/ru\s(corp|europe|middleeast|northamerica|southpacific|southamerica|fareast|africa|redmond|exchange|extranet|partners|extranettest|parttest|noe|ntdev|ntwksta|sys\-wingroup|windeploy|wingroup|winse|segroup|xcorp|xrep|phx|gme|usme|cdocidm|mslpa).*/rp.*</string>
+    </ContentSearchPatterns>
+    <MatchDetails>Found file matching possible domain credentials</MatchDetails>
+    <Recommendation>Validate file contains secrets, remove, roll credential, and use approved store. For additional information on secret remediation see https://aka.ms/credscan </Recommendation>
+    <Severity>3</Severity>
+  </ContentSearcher>
+</ArrayOfContentSearcher>

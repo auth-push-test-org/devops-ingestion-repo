@@ -1,0 +1,212 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="c:\buildagent\_work\_sdt\microsoft.codeanalysis.fxcop.14.0.23107.0\tools\Xml\FxCopReport.xsl"?>
+<FxCopReport Version="14.0">
+ <Targets>
+  <Target Name="$(ProjectDir)/../../../../7/s/FaceBookings.Setup/bin/Microsoft.OutlookApps.FaceBookings.Setup.dll">
+   <Modules>
+    <Module Name="microsoft.outlookapps.facebookings.setup.dll">
+     <Messages>
+      <Message Id="obj/debug/csautoparameterize/original/web.config#configuration/system.web/authentication[@mode]/forms[@requireSSL]" TypeName="EnableFormsRequireSSL" Category="Microsoft.Security.Web.Configuration" CheckId="CA3103" Status="Active" Created="2017-11-02 20:22:02Z" FixCategory="DependsOnFix">
+       <Issue Certainty="75" Level="Error" File="Web.config" Line="7">Always enable requireSSL attribute in &lt;forms&gt; element. Set requireSSL to "true". This is recommended for all authentication modes, including Windows and None, since it is possible to create auth tickets manually. in unit Microsoft.OutlookApps.FaceBookings.Setup</Issue>
+      </Message>
+      <Message Id="obj/debug/csautoparameterize/transformed/web.config#configuration/system.web/authentication[@mode]/forms[@requireSSL]" TypeName="EnableFormsRequireSSL" Category="Microsoft.Security.Web.Configuration" CheckId="CA3103" Status="Active" Created="2017-11-02 20:22:02Z" FixCategory="DependsOnFix">
+       <Issue Certainty="75" Level="Error" Path="C:\BuildAgent\_work\7\s\FaceBookings.Setup\obj\Debug\CSAutoParameterize\transformed" Line="7">Always enable requireSSL attribute in &lt;forms&gt; element. Set requireSSL to "true". This is recommended for all authentication modes, including Windows and None, since it is possible to create auth tickets manually. in unit Microsoft.OutlookApps.FaceBookings.Setup</Issue>
+      </Message>
+      <Message Id="obj/debug/package/packagetmp/web.config#configuration/system.web/authentication[@mode]/forms[@requireSSL]" TypeName="EnableFormsRequireSSL" Category="Microsoft.Security.Web.Configuration" CheckId="CA3103" Status="Active" Created="2017-11-02 20:22:02Z" FixCategory="DependsOnFix">
+       <Issue Certainty="75" Level="Error" Path="C:\BuildAgent\_work\7\s\FaceBookings.Setup\obj\Debug\Package\PackageTmp" File="Web.config" Line="7">Always enable requireSSL attribute in &lt;forms&gt; element. Set requireSSL to "true". This is recommended for all authentication modes, including Windows and None, since it is possible to create auth tickets manually. in unit Microsoft.OutlookApps.FaceBookings.Setup</Issue>
+      </Message>
+      <Message Id="obj/debug/transformwebconfig/assist/web.config#configuration/system.web/authentication[@mode]/forms[@requireSSL]" TypeName="EnableFormsRequireSSL" Category="Microsoft.Security.Web.Configuration" CheckId="CA3103" Status="Active" Created="2017-11-02 20:22:02Z" FixCategory="DependsOnFix">
+       <Issue Certainty="75" Level="Error" Path="C:\BuildAgent\_work\7\s\FaceBookings.Setup\obj\Debug\TransformWebConfig\assist" File="Web.config" Line="17">Always enable requireSSL attribute in &lt;forms&gt; element. Set requireSSL to "true". This is recommended for all authentication modes, including Windows and None, since it is possible to create auth tickets manually. in unit Microsoft.OutlookApps.FaceBookings.Setup</Issue>
+      </Message>
+      <Message Id="obj/debug/transformwebconfig/original/web.config#configuration/system.web/authentication[@mode]/forms[@requireSSL]" TypeName="EnableFormsRequireSSL" Category="Microsoft.Security.Web.Configuration" CheckId="CA3103" Status="Active" Created="2017-11-02 20:22:02Z" FixCategory="DependsOnFix">
+       <Issue Certainty="75" Level="Error" Path="C:\BuildAgent\_work\7\s\FaceBookings.Setup\obj\Debug\TransformWebConfig\original" File="Web.config" Line="7">Always enable requireSSL attribute in &lt;forms&gt; element. Set requireSSL to "true". This is recommended for all authentication modes, including Windows and None, since it is possible to create auth tickets manually. in unit Microsoft.OutlookApps.FaceBookings.Setup</Issue>
+      </Message>
+      <Message Id="obj/debug/transformwebconfig/transformed/web.config#configuration/system.web/authentication[@mode]/forms[@requireSSL]" TypeName="EnableFormsRequireSSL" Category="Microsoft.Security.Web.Configuration" CheckId="CA3103" Status="Active" Created="2017-11-02 20:22:02Z" FixCategory="DependsOnFix">
+       <Issue Certainty="75" Level="Error" Path="C:\BuildAgent\_work\7\s\FaceBookings.Setup\obj\Debug\TransformWebConfig\transformed" File="Web.config" Line="7">Always enable requireSSL attribute in &lt;forms&gt; element. Set requireSSL to "true". This is recommended for all authentication modes, including Windows and None, since it is possible to create auth tickets manually. in unit Microsoft.OutlookApps.FaceBookings.Setup</Issue>
+      </Message>
+      <Message Id="web.config#configuration/system.web/authentication[@mode]/forms[@requireSSL]" TypeName="EnableFormsRequireSSL" Category="Microsoft.Security.Web.Configuration" CheckId="CA3103" Status="Active" Created="2017-11-02 20:22:02Z" FixCategory="DependsOnFix">
+       <Issue Certainty="75" Level="Error" Path="C:\BuildAgent\_work\7\s\FaceBookings.Setup" File="Web.config" Line="7">Always enable requireSSL attribute in &lt;forms&gt; element. Set requireSSL to "true". This is recommended for all authentication modes, including Windows and None, since it is possible to create auth tickets manually. in unit Microsoft.OutlookApps.FaceBookings.Setup</Issue>
+      </Message>
+      <Message Id="web.debug.config#configuration/system.web/authentication[@mode]/forms[@requireSSL]" TypeName="EnableFormsRequireSSL" Category="Microsoft.Security.Web.Configuration" CheckId="CA3103" Status="Active" Created="2017-11-02 20:22:02Z" FixCategory="DependsOnFix">
+       <Issue Certainty="75" Level="Error" Path="C:\BuildAgent\_work\7\s\FaceBookings.Setup" File="Web.Debug.config" Line="17">Always enable requireSSL attribute in &lt;forms&gt; element. Set requireSSL to "true". This is recommended for all authentication modes, including Windows and None, since it is possible to create auth tickets manually. in unit Microsoft.OutlookApps.FaceBookings.Setup</Issue>
+      </Message>
+      <Message Id="web.release.config#configuration/system.web/authentication[@mode]/forms[@requireSSL]" TypeName="EnableFormsRequireSSL" Category="Microsoft.Security.Web.Configuration" CheckId="CA3103" Status="Active" Created="2017-11-02 20:22:02Z" FixCategory="DependsOnFix">
+       <Issue Certainty="75" Level="Error" Path="C:\BuildAgent\_work\7\s\FaceBookings.Setup" File="Web.Release.config" Line="17">Always enable requireSSL attribute in &lt;forms&gt; element. Set requireSSL to "true". This is recommended for all authentication modes, including Windows and None, since it is possible to create auth tickets manually. in unit Microsoft.OutlookApps.FaceBookings.Setup</Issue>
+      </Message>
+      <Message Id="obj/debug/csautoparameterize/original/web.config#configuration/system.web/httpCookies[@requireSSL]" TypeName="EnableHttpCookiesRequireSsl" Category="Microsoft.Security.Web.Configuration" CheckId="CA3119" Status="Active" Created="2017-11-02 20:22:02Z" FixCategory="DependsOnFix">
+       <Issue Certainty="75" Level="Error" Path="C:\BuildAgent\_work\7\s\FaceBookings.Setup\obj\Debug\CSAutoParameterize\original" File="Web.config" Line="7">Always enable requireSSL attribute in &lt;httpCookies&gt; element. Set requireSSL attribute to "true" in unit Microsoft.OutlookApps.FaceBookings.Setup</Issue>
+      </Message>
+      <Message Id="obj/debug/csautoparameterize/transformed/web.config#configuration/system.web/httpCookies[@requireSSL]" TypeName="EnableHttpCookiesRequireSsl" Category="Microsoft.Security.Web.Configuration" CheckId="CA3119" Status="Active" Created="2017-11-02 20:22:02Z" FixCategory="DependsOnFix">
+       <Issue Certainty="75" Level="Error" Path="C:\BuildAgent\_work\7\s\FaceBookings.Setup\obj\Debug\CSAutoParameterize\transformed" File="Web.config" Line="7">Always enable requireSSL attribute in &lt;httpCookies&gt; element. Set requireSSL attribute to "true" in unit Microsoft.OutlookApps.FaceBookings.Setup</Issue>
+      </Message>
+      <Message Id="obj/debug/package/packagetmp/web.config#configuration/system.web/httpCookies[@requireSSL]" TypeName="EnableHttpCookiesRequireSsl" Category="Microsoft.Security.Web.Configuration" CheckId="CA3119" Status="Active" Created="2017-11-02 20:22:02Z" FixCategory="DependsOnFix">
+       <Issue Certainty="75" Level="Error" Path="C:\BuildAgent\_work\7\s\FaceBookings.Setup\obj\Debug\Package\PackageTmp" File="Web.config" Line="7">Always enable requireSSL attribute in &lt;httpCookies&gt; element. Set requireSSL attribute to "true" in unit Microsoft.OutlookApps.FaceBookings.Setup</Issue>
+      </Message>
+      <Message Id="obj/debug/transformwebconfig/assist/web.config#configuration/system.web/httpCookies[@requireSSL]" TypeName="EnableHttpCookiesRequireSsl" Category="Microsoft.Security.Web.Configuration" CheckId="CA3119" Status="Active" Created="2017-11-02 20:22:02Z" FixCategory="DependsOnFix">
+       <Issue Certainty="75" Level="Error" Path="C:\BuildAgent\_work\7\s\FaceBookings.Setup\obj\Debug\TransformWebConfig\assist" File="Web.config" Line="17">Always enable requireSSL attribute in &lt;httpCookies&gt; element. Set requireSSL attribute to "true" in unit Microsoft.OutlookApps.FaceBookings.Setup</Issue>
+      </Message>
+      <Message Id="obj/debug/transformwebconfig/original/web.config#configuration/system.web/httpCookies[@requireSSL]" TypeName="EnableHttpCookiesRequireSsl" Category="Microsoft.Security.Web.Configuration" CheckId="CA3119" Status="Active" Created="2017-11-02 20:22:02Z" FixCategory="DependsOnFix">
+       <Issue Certainty="75" Level="Error" Path="C:\BuildAgent\_work\7\s\FaceBookings.Setup\obj\Debug\TransformWebConfig\original" File="Web.config" Line="7">Always enable requireSSL attribute in &lt;httpCookies&gt; element. Set requireSSL attribute to "true" in unit Microsoft.OutlookApps.FaceBookings.Setup</Issue>
+      </Message>
+      <Message Id="obj/debug/transformwebconfig/transformed/web.config#configuration/system.web/httpCookies[@requireSSL]" TypeName="EnableHttpCookiesRequireSsl" Category="Microsoft.Security.Web.Configuration" CheckId="CA3119" Status="Active" Created="2017-11-02 20:22:02Z" FixCategory="DependsOnFix">
+       <Issue Certainty="75" Level="Error" Path="C:\BuildAgent\_work\7\s\FaceBookings.Setup\obj\Debug\TransformWebConfig\transformed" File="Web.config" Line="7">Always enable requireSSL attribute in &lt;httpCookies&gt; element. Set requireSSL attribute to "true" in unit Microsoft.OutlookApps.FaceBookings.Setup</Issue>
+      </Message>
+      <Message Id="web.config#configuration/system.web/httpCookies[@requireSSL]" TypeName="EnableHttpCookiesRequireSsl" Category="Microsoft.Security.Web.Configuration" CheckId="CA3119" Status="Active" Created="2017-11-02 20:22:02Z" FixCategory="DependsOnFix">
+       <Issue Certainty="75" Level="Error" Path="C:\BuildAgent\_work\7\s\FaceBookings.Setup" File="Web.config" Line="7">Always enable requireSSL attribute in &lt;httpCookies&gt; element. Set requireSSL attribute to "true" in unit Microsoft.OutlookApps.FaceBookings.Setup</Issue>
+      </Message>
+      <Message Id="web.debug.config#configuration/system.web/httpCookies[@requireSSL]" TypeName="EnableHttpCookiesRequireSsl" Category="Microsoft.Security.Web.Configuration" CheckId="CA3119" Status="Active" Created="2017-11-02 20:22:02Z" FixCategory="DependsOnFix">
+       <Issue Certainty="75" Level="Error" Path="C:\BuildAgent\_work\7\s\FaceBookings.Setup" File="Web.Debug.config" Line="17">Always enable requireSSL attribute in &lt;httpCookies&gt; element. Set requireSSL attribute to "true" in unit Microsoft.OutlookApps.FaceBookings.Setup</Issue>
+      </Message>
+      <Message Id="web.release.config#configuration/system.web/httpCookies[@requireSSL]" TypeName="EnableHttpCookiesRequireSsl" Category="Microsoft.Security.Web.Configuration" CheckId="CA3119" Status="Active" Created="2017-11-02 20:22:02Z" FixCategory="DependsOnFix">
+       <Issue Certainty="75" Level="Error" Path="C:\BuildAgent\_work\7\s\FaceBookings.Setup" File="Web.Release.config" Line="17">Always enable requireSSL attribute in &lt;httpCookies&gt; element. Set requireSSL attribute to "true" in unit Microsoft.OutlookApps.FaceBookings.Setup</Issue>
+      </Message>
+     </Messages>
+     <Namespaces>
+      <Namespace Name="Microsoft.OutlookApps.FaceBookings.Setup">
+       <Types>
+        <Type Name="Default" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="SetViewStateUserKey" Category="Microsoft.Security.Web.Configuration" CheckId="CA3105" Status="Active" Created="2017-11-02 20:22:02Z" FixCategory="DependsOnFix">
+           <Issue Certainty="75" Level="Error" Path="C:\BuildAgent\_work\7\s\FaceBookings.Setup" File="default.aspx.cs" Line="1">Set ViewStateUserKey property in OnInit or Page_Init function. No override for either the OnInit or Page_Init function was found. in type Microsoft.OutlookApps.FaceBookings.Setup.Default</Issue>
+          </Message>
+         </Messages>
+        </Type>
+       </Types>
+      </Namespace>
+     </Namespaces>
+    </Module>
+   </Modules>
+  </Target>
+  <Target Name="$(ProjectDir)/../../../../7/s/FaceBookings/bin/Microsoft.OutlookApps.FaceBookings.dll">
+   <Modules>
+    <Module Name="microsoft.outlookapps.facebookings.dll">
+     <Messages>
+      <Message Id="obj/debug/csautoparameterize/original/web.config#configuration/system.web/authentication[@mode]/forms[@requireSSL]" TypeName="EnableFormsRequireSSL" Category="Microsoft.Security.Web.Configuration" CheckId="CA3103" Status="Active" Created="2017-11-02 20:22:02Z" FixCategory="DependsOnFix">
+       <Issue Certainty="75" Level="Error" Path="C:\BuildAgent\_work\7\s\FaceBookings\obj\Debug\CSAutoParameterize\original" File="Web.config" Line="15">Always enable requireSSL attribute in &lt;forms&gt; element. Set requireSSL to "true". This is recommended for all authentication modes, including Windows and None, since it is possible to create auth tickets manually. in unit Microsoft.OutlookApps.FaceBookings</Issue>
+      </Message>
+      <Message Id="obj/debug/csautoparameterize/transformed/web.config#configuration/system.web/authentication[@mode]/forms[@requireSSL]" TypeName="EnableFormsRequireSSL" Category="Microsoft.Security.Web.Configuration" CheckId="CA3103" Status="Active" Created="2017-11-02 20:22:02Z" FixCategory="DependsOnFix">
+       <Issue Certainty="75" Level="Error" Path="C:\BuildAgent\_work\7\s\FaceBookings\obj\Debug\CSAutoParameterize\transformed" File="Web.config" Line="15">Always enable requireSSL attribute in &lt;forms&gt; element. Set requireSSL to "true". This is recommended for all authentication modes, including Windows and None, since it is possible to create auth tickets manually. in unit Microsoft.OutlookApps.FaceBookings</Issue>
+      </Message>
+      <Message Id="obj/debug/package/packagetmp/web.config#configuration/system.web/authentication[@mode]/forms[@requireSSL]" TypeName="EnableFormsRequireSSL" Category="Microsoft.Security.Web.Configuration" CheckId="CA3103" Status="Active" Created="2017-11-02 20:22:02Z" FixCategory="DependsOnFix">
+       <Issue Certainty="75" Level="Error" Path="C:\BuildAgent\_work\7\s\FaceBookings\obj\Debug\Package\PackageTmp" File="Web.config" Line="15">Always enable requireSSL attribute in &lt;forms&gt; element. Set requireSSL to "true". This is recommended for all authentication modes, including Windows and None, since it is possible to create auth tickets manually. in unit Microsoft.OutlookApps.FaceBookings</Issue>
+      </Message>
+      <Message Id="obj/debug/transformwebconfig/assist/web.config#configuration/system.web/authentication[@mode]/forms[@requireSSL]" TypeName="EnableFormsRequireSSL" Category="Microsoft.Security.Web.Configuration" CheckId="CA3103" Status="Active" Created="2017-11-02 20:22:02Z" FixCategory="DependsOnFix">
+       <Issue Certainty="75" Level="Error" Path="C:\BuildAgent\_work\7\s\FaceBookings\obj\Debug\TransformWebConfig\assist" File="Web.config" Line="17">Always enable requireSSL attribute in &lt;forms&gt; element. Set requireSSL to "true". This is recommended for all authentication modes, including Windows and None, since it is possible to create auth tickets manually. in unit Microsoft.OutlookApps.FaceBookings</Issue>
+      </Message>
+      <Message Id="obj/debug/transformwebconfig/original/web.config#configuration/system.web/authentication[@mode]/forms[@requireSSL]" TypeName="EnableFormsRequireSSL" Category="Microsoft.Security.Web.Configuration" CheckId="CA3103" Status="Active" Created="2017-11-02 20:22:02Z" FixCategory="DependsOnFix">
+       <Issue Certainty="75" Level="Error" Path="C:\BuildAgent\_work\7\s\FaceBookings\obj\Debug\TransformWebConfig\original" File="Web.config" Line="15">Always enable requireSSL attribute in &lt;forms&gt; element. Set requireSSL to "true". This is recommended for all authentication modes, including Windows and None, since it is possible to create auth tickets manually. in unit Microsoft.OutlookApps.FaceBookings</Issue>
+      </Message>
+      <Message Id="obj/debug/transformwebconfig/transformed/web.config#configuration/system.web/authentication[@mode]/forms[@requireSSL]" TypeName="EnableFormsRequireSSL" Category="Microsoft.Security.Web.Configuration" CheckId="CA3103" Status="Active" Created="2017-11-02 20:22:02Z" FixCategory="DependsOnFix">
+       <Issue Certainty="75" Level="Error" Path="C:\BuildAgent\_work\7\s\FaceBookings\obj\Debug\TransformWebConfig\transformed" File="Web.config" Line="15">Always enable requireSSL attribute in &lt;forms&gt; element. Set requireSSL to "true". This is recommended for all authentication modes, including Windows and None, since it is possible to create auth tickets manually. in unit Microsoft.OutlookApps.FaceBookings</Issue>
+      </Message>
+      <Message Id="web.config#configuration/system.web/authentication[@mode]/forms[@requireSSL]" TypeName="EnableFormsRequireSSL" Category="Microsoft.Security.Web.Configuration" CheckId="CA3103" Status="Active" Created="2017-11-02 20:22:02Z" FixCategory="DependsOnFix">
+       <Issue Certainty="75" Level="Error" Path="C:\BuildAgent\_work\7\s\FaceBookings" File="Web.config" Line="15">Always enable requireSSL attribute in &lt;forms&gt; element. Set requireSSL to "true". This is recommended for all authentication modes, including Windows and None, since it is possible to create auth tickets manually. in unit Microsoft.OutlookApps.FaceBookings</Issue>
+      </Message>
+      <Message Id="web.debug.config#configuration/system.web/authentication[@mode]/forms[@requireSSL]" TypeName="EnableFormsRequireSSL" Category="Microsoft.Security.Web.Configuration" CheckId="CA3103" Status="Active" Created="2017-11-02 20:22:02Z" FixCategory="DependsOnFix">
+       <Issue Certainty="75" Level="Error" Path="C:\BuildAgent\_work\7\s\FaceBookings" File="Web.Debug.config" Line="17">Always enable requireSSL attribute in &lt;forms&gt; element. Set requireSSL to "true". This is recommended for all authentication modes, including Windows and None, since it is possible to create auth tickets manually. in unit Microsoft.OutlookApps.FaceBookings</Issue>
+      </Message>
+      <Message Id="web.release.config#configuration/system.web/authentication[@mode]/forms[@requireSSL]" TypeName="EnableFormsRequireSSL" Category="Microsoft.Security.Web.Configuration" CheckId="CA3103" Status="Active" Created="2017-11-02 20:22:02Z" FixCategory="DependsOnFix">
+       <Issue Certainty="75" Level="Error" Path="C:\BuildAgent\_work\7\s\FaceBookings" File="Web.Release.config" Line="17">Always enable requireSSL attribute in &lt;forms&gt; element. Set requireSSL to "true". This is recommended for all authentication modes, including Windows and None, since it is possible to create auth tickets manually. in unit Microsoft.OutlookApps.FaceBookings</Issue>
+      </Message>
+      <Message Id="obj/debug/csautoparameterize/original/web.config#configuration/system.web/httpCookies[@requireSSL]" TypeName="EnableHttpCookiesRequireSsl" Category="Microsoft.Security.Web.Configuration" CheckId="CA3119" Status="Active" Created="2017-11-02 20:22:02Z" FixCategory="DependsOnFix">
+       <Issue Certainty="75" Level="Error" Path="C:\BuildAgent\_work\7\s\FaceBookings\obj\Debug\CSAutoParameterize\original" File="Web.config" Line="15">Always enable requireSSL attribute in &lt;httpCookies&gt; element. Set requireSSL attribute to "true" in unit Microsoft.OutlookApps.FaceBookings</Issue>
+      </Message>
+      <Message Id="obj/debug/csautoparameterize/transformed/web.config#configuration/system.web/httpCookies[@requireSSL]" TypeName="EnableHttpCookiesRequireSsl" Category="Microsoft.Security.Web.Configuration" CheckId="CA3119" Status="Active" Created="2017-11-02 20:22:02Z" FixCategory="DependsOnFix">
+       <Issue Certainty="75" Level="Error" Path="C:\BuildAgent\_work\7\s\FaceBookings\obj\Debug\CSAutoParameterize\transformed" File="Web.config" Line="15">Always enable requireSSL attribute in &lt;httpCookies&gt; element. Set requireSSL attribute to "true" in unit Microsoft.OutlookApps.FaceBookings</Issue>
+      </Message>
+      <Message Id="obj/debug/package/packagetmp/web.config#configuration/system.web/httpCookies[@requireSSL]" TypeName="EnableHttpCookiesRequireSsl" Category="Microsoft.Security.Web.Configuration" CheckId="CA3119" Status="Active" Created="2017-11-02 20:22:02Z" FixCategory="DependsOnFix">
+       <Issue Certainty="75" Level="Error" Path="C:\BuildAgent\_work\7\s\FaceBookings\obj\Debug\Package\PackageTmp" File="Web.config" Line="15">Always enable requireSSL attribute in &lt;httpCookies&gt; element. Set requireSSL attribute to "true" in unit Microsoft.OutlookApps.FaceBookings</Issue>
+      </Message>
+      <Message Id="obj/debug/transformwebconfig/assist/web.config#configuration/system.web/httpCookies[@requireSSL]" TypeName="EnableHttpCookiesRequireSsl" Category="Microsoft.Security.Web.Configuration" CheckId="CA3119" Status="Active" Created="2017-11-02 20:22:02Z" FixCategory="DependsOnFix">
+       <Issue Certainty="75" Level="Error" Path="C:\BuildAgent\_work\7\s\FaceBookings\obj\Debug\TransformWebConfig\assist" File="Web.config" Line="17">Always enable requireSSL attribute in &lt;httpCookies&gt; element. Set requireSSL attribute to "true" in unit Microsoft.OutlookApps.FaceBookings</Issue>
+      </Message>
+      <Message Id="obj/debug/transformwebconfig/original/web.config#configuration/system.web/httpCookies[@requireSSL]" TypeName="EnableHttpCookiesRequireSsl" Category="Microsoft.Security.Web.Configuration" CheckId="CA3119" Status="Active" Created="2017-11-02 20:22:02Z" FixCategory="DependsOnFix">
+       <Issue Certainty="75" Level="Error" Path="C:\BuildAgent\_work\7\s\FaceBookings\obj\Debug\TransformWebConfig\original" File="Web.config" Line="15">Always enable requireSSL attribute in &lt;httpCookies&gt; element. Set requireSSL attribute to "true" in unit Microsoft.OutlookApps.FaceBookings</Issue>
+      </Message>
+      <Message Id="obj/debug/transformwebconfig/transformed/web.config#configuration/system.web/httpCookies[@requireSSL]" TypeName="EnableHttpCookiesRequireSsl" Category="Microsoft.Security.Web.Configuration" CheckId="CA3119" Status="Active" Created="2017-11-02 20:22:02Z" FixCategory="DependsOnFix">
+       <Issue Certainty="75" Level="Error" Path="C:\BuildAgent\_work\7\s\FaceBookings\obj\Debug\TransformWebConfig\transformed" File="Web.config" Line="15">Always enable requireSSL attribute in &lt;httpCookies&gt; element. Set requireSSL attribute to "true" in unit Microsoft.OutlookApps.FaceBookings</Issue>
+      </Message>
+      <Message Id="web.config#configuration/system.web/httpCookies[@requireSSL]" TypeName="EnableHttpCookiesRequireSsl" Category="Microsoft.Security.Web.Configuration" CheckId="CA3119" Status="Active" Created="2017-11-02 20:22:02Z" FixCategory="DependsOnFix">
+       <Issue Certainty="75" Level="Error" Path="C:\BuildAgent\_work\7\s\FaceBookings" File="Web.config" Line="15">Always enable requireSSL attribute in &lt;httpCookies&gt; element. Set requireSSL attribute to "true" in unit Microsoft.OutlookApps.FaceBookings</Issue>
+      </Message>
+      <Message Id="web.debug.config#configuration/system.web/httpCookies[@requireSSL]" TypeName="EnableHttpCookiesRequireSsl" Category="Microsoft.Security.Web.Configuration" CheckId="CA3119" Status="Active" Created="2017-11-02 20:22:02Z" FixCategory="DependsOnFix">
+       <Issue Certainty="75" Level="Error" Path="C:\BuildAgent\_work\7\s\FaceBookings" File="Web.Debug.config" Line="17">Always enable requireSSL attribute in &lt;httpCookies&gt; element. Set requireSSL attribute to "true" in unit Microsoft.OutlookApps.FaceBookings</Issue>
+      </Message>
+      <Message Id="web.release.config#configuration/system.web/httpCookies[@requireSSL]" TypeName="EnableHttpCookiesRequireSsl" Category="Microsoft.Security.Web.Configuration" CheckId="CA3119" Status="Active" Created="2017-11-02 20:22:02Z" FixCategory="DependsOnFix">
+       <Issue Certainty="75" Level="Error" Path="C:\BuildAgent\_work\7\s\FaceBookings" File="Web.Release.config" Line="17">Always enable requireSSL attribute in &lt;httpCookies&gt; element. Set requireSSL attribute to "true" in unit Microsoft.OutlookApps.FaceBookings</Issue>
+      </Message>
+     </Messages>
+     <Namespaces>
+      <Namespace Name="Microsoft.OutlookApps.FaceBookings">
+       <Types>
+        <Type Name="Default" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="SetViewStateUserKey" Category="Microsoft.Security.Web.Configuration" CheckId="CA3105" Status="Active" Created="2017-11-02 20:22:02Z" FixCategory="DependsOnFix">
+           <Issue Certainty="75" Level="Error" Path="C:\BuildAgent\_work\7\s\FaceBookings" File="default.aspx.cs" Line="1">Set ViewStateUserKey property in OnInit or Page_Init function. No override for either the OnInit or Page_Init function was found. in type Microsoft.OutlookApps.FaceBookings.Default</Issue>
+          </Message>
+         </Messages>
+        </Type>
+       </Types>
+      </Namespace>
+     </Namespaces>
+    </Module>
+   </Modules>
+  </Target>
+ </Targets>
+ <Rules>
+  <Rule TypeName="EnableFormsRequireSSL" Category="Microsoft.Security.Web.Configuration" CheckId="CA3103">
+   <Name>EnableFormsRequireSSL</Name>
+   <Description>Verify that the requireSSL attribute on the system.web.authentication.forms configuration element is set to true which forces the authentication cookie to specify the secure attribute. This indicates the browser to only provide the cookie over SSL.</Description>
+   <Resolution Name="Default">Always enable requireSSL attribute in &lt;forms&gt; element. Set requireSSL to "true". This is recommended for all authentication modes, including Windows and None, since it is possible to create auth tickets manually. in unit Microsoft.OutlookApps.FaceBookings</Resolution>
+   <Owner>RuleOwner</Owner>
+   <Url>http://go.microsoft.com/fwlink/?LinkID=263670&amp;clcid=0x409</Url>
+   <Email />
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="SecurityWebConfigurationRules.dll" Version="14.0.0.0" />
+  </Rule>
+  <Rule TypeName="EnableHttpCookiesRequireSsl" Category="Microsoft.Security.Web.Configuration" CheckId="CA3119">
+   <Name>EnableHttpCookiesRequireSsl</Name>
+   <Description>Verify that the system.web.httpCookies requireSSL configuration is set to true which forces all cookies to be sent with the secure attribute. This indicates the browser to only provide the cookie over SSL.</Description>
+   <Resolution Name="Default">Always enable requireSSL attribute in &lt;httpCookies&gt; element. Set requireSSL attribute to "true" in unit Microsoft.OutlookApps.FaceBookings</Resolution>
+   <Owner>RuleOwner</Owner>
+   <Url>http://go.microsoft.com/fwlink/?LinkID=263670&amp;clcid=0x409</Url>
+   <Email />
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="SecurityWebConfigurationRules.dll" Version="14.0.0.0" />
+  </Rule>
+  <Rule TypeName="SetViewStateUserKey" Category="Microsoft.Security.Web.Configuration" CheckId="CA3105">
+   <Name>SetViewStateUserKey</Name>
+   <Description>Verify that the viewstate user key is set in OnInit or PageInit function. Setting the user key to a session ID or user ID prevents cross-site request forgery attacks.</Description>
+   <Resolution Name="Default">Set ViewStateUserKey property in OnInit or Page_Init function. No override for either the OnInit or Page_Init function was found. in type Microsoft.OutlookApps.FaceBookings.Default</Resolution>
+   <Owner>RuleOwner</Owner>
+   <Url>http://go.microsoft.com/fwlink/?LinkID=263670&amp;clcid=0x409</Url>
+   <Email />
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="SecurityWebConfigurationRules.dll" Version="14.0.0.0" />
+  </Rule>
+ </Rules>
+ <Localized>
+  <String Key="Category">Category</String>
+  <String Key="Certainty">Certainty</String>
+  <String Key="CollapseAll">Collapse All</String>
+  <String Key="CheckId">Check Id</String>
+  <String Key="Error">Error</String>
+  <String Key="Errors">error(s)</String>
+  <String Key="ExpandAll">Expand All</String>
+  <String Key="Help">Help</String>
+  <String Key="Line">Line</String>
+  <String Key="Messages">message(s)</String>
+  <String Key="LocationNotStoredInPdb">[Location not stored in Pdb]</String>
+  <String Key="Project">Project</String>
+  <String Key="Resolution">Resolution</String>
+  <String Key="Rule">Rule</String>
+  <String Key="RuleFile">Rule File</String>
+  <String Key="RuleDescription">Rule Description</String>
+  <String Key="Source">Source</String>
+  <String Key="Status">Status</String>
+  <String Key="Target">Target</String>
+  <String Key="Warning">Warning</String>
+  <String Key="Warnings">warning(s)</String>
+  <String Key="ReportTitle">Code Analysis Report</String>
+ </Localized>
+</FxCopReport>

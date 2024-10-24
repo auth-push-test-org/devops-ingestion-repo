@@ -1,0 +1,9 @@
+{
+	"tool": "Credential Scanner",
+	"suppressions": [
+		{
+			"file": "CustomSearchers.xml",
+			"_justification": "Issues should not be detected in the searchers file itself."
+		}
+	]
+}

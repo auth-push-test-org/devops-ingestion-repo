@@ -1,0 +1,55 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger: none
+
+pool:
+  name: mohitr-local
+
+variables:
+  - name: CONTAINER_NAME
+    value: containerscandemo
+  - name: IMAGE_TO_SCAN
+    value: azurecspmdevtest1test.azurecr.io/$(CONTAINER_NAME):$(Build.BuildId)
+  - name: TRIVY_LOG_FILE
+    value: $(Build.SourcesDirectory)/trivy_container-scan-demo.json
+steps:
+
+# Run docker to build an image.
+- task: Docker@2
+  inputs:
+   containerRegistry: 'CSPMDevTest1Test'
+   repository: $(CONTAINER_NAME)
+   command: 'build'
+   Dockerfile: 'SecureApp/containers/trivy-demo-test/Dockerfile'
+
+# Run MSCA to invoke Trivy.
+- task: MSCA@1
+  inputs:
+    config: 'container-scan-demo'
+
+# Run Docker to push the image to your container registry.
+- task: Docker@2
+  inputs:
+   containerRegistry: 'CSPMDevTest1Test'
+   repository: $(CONTAINER_NAME)
+   command: push
+
+# Publish the Trivy log file as a build artifact, so you can find details of any issues identified.
+- task: PublishPipelineArtifact@1
+  inputs:
+    targetPath: '$(TRIVY_LOG_FILE)'
+    artifactName: 'containerScanLog'
+
+# Publish the Trivy log file to Azure Security Center.
+- task: publish-security-assessments@0
+  inputs:
+    imageName: '$(IMAGE_TO_SCAN)'
+    artifactType: 'containerImage'
+    subscriptionToken: '$(CICD_SUBSCRIPTION_TOKEN)'
+    connectionString: '$(CICD_CONNECTION_STRING)'
+    scanProvider: 'trivy'
+    scanResultsPath: '$(TRIVY_LOG_FILE)'
+

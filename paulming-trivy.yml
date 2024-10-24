@@ -1,0 +1,33 @@
+trigger: none
+
+pool:
+  name: paulming-linux
+
+variables:
+  - name: System.Debug
+    value: true
+  - name: GDN_LOGGERLEVEL
+    value: Trace
+  - name: IMAGE_TO_SCAN
+    value: azurecspmdevtest1test.azurecr.io/testcontainer:$(Build.BuildId)
+  - name: TRIVY_LOG_FILE
+    value: $(Build.SourcesDirectory)/trivylogfile.json
+
+steps:
+- task: Docker@2
+  inputs:
+    containerRegistry: 'CSPMDevTest1Test'
+    repository: 'testcontainer'
+    command: 'buildAndPush'
+    Dockerfile: 'SecureApp/containers/trivy-ci-test/Dockerfile'
+- task: paulmingMSCA@1
+  inputs:
+    config: 'trivy-paulming'
+- task: paulmingpublish-security-assessments@0
+  inputs:
+    imageName: '$(IMAGE_TO_SCAN)'
+    artifactType: 'containerImage'
+    subscriptionToken: '$(SHA_SUBSCRIPTION_TOKEN)'
+    connectionString: 'InstrumentationKey=2117c02e-80c3-47af-b1c5-768529add990;IngestionEndpoint=https://westeurope-4.in.applicationinsights.azure.com/'
+    scanProvider: 'trivy'
+    scanResultsPath: '$(TRIVY_LOG_FILE)'

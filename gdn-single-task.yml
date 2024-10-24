@@ -1,0 +1,47 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger: none
+
+pool:
+  name: 'Integration'
+
+variables:
+  skipComponentGovernenceDetection: true
+  runCodesignValidationInjection: false
+
+steps:
+- task: DeleteFiles@1
+  inputs:
+    SourceFolder: '$(Build.SourcesDirectory)'
+    Contents: '.gdn/.gdnsupress'
+- task: Guardian@1
+- task: PublishSecurityAnalysisLogs@3
+  inputs:
+    ArtifactName: 'CodeAnalysisLogs'
+    ArtifactType: 'Container'
+    AllTools: false
+    ToolLogsNotFoundAction: 'Error'
+    # AntiMalware: true
+    # APIScan: true
+    # Armory: true
+    # Bandit: true
+    # BinSkim: true
+    # CodesignValidation: true
+    # CredScan: true
+    # CSRF: true
+    # ESLint: true
+    # Flawfinder: true
+    # FortifySCA: true
+    # FxCop: true
+    # ModernCop: true
+    # MSRD: true
+    # PoliCheck: true
+    # RoslynAnalyzers: true
+    # SDLNativeRules: true
+    # Semmle: true
+    # SpotBugs: true
+    # TSLint: true
+    # WebScout: true
