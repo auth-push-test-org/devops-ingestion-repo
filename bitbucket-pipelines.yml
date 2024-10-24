@@ -1,0 +1,39 @@
+# This is an example Starter pipeline configuration
+# Use a skeleton to build, test and deploy using manual and parallel steps
+# -----
+# You can specify a custom docker image from Docker Hub as your build environment.
+
+image: atlassian/default-image:3
+
+pipelines:
+  default:
+    - parallel:
+      - step:
+          name: 'MSDO trivy test'
+          script:
+            - export DfdBackendServiceEnvironment="PPE"
+            - echo $DfdBackendServiceEnvironment
+            - export GDN_PUSH_TOKEN_TENANT_ID=$DFDENTRATENANTID
+            - export GDN_PUSH_TOKEN_CLIENT_ID=$DFDENTRACLIENTID
+            - export GDN_PUSH_TOKEN_CLIENT_SECRET=$DFDENTRACLIENTSECRET
+            - curl -L -o ./msdo_linux.zip https://www.nuget.org/api/v2/package/Microsoft.Security.DevOps.Cli.linux-x64/
+            - unzip ./msdo_linux.zip
+            - chmod +x tools/guardian
+            - chmod +x tools/Microsoft.Guardian.Cli
+            - ls -lah .
+            - tools/guardian init --force
+            - tools/guardian run -t trivy --export-file ./ubuntu-test.sarif --publish-file-folder-path ./ubuntu-test.sarif
+
+
+    # The following deployment steps will be executed for each pipeline run. To configure your steps and conditionally deploy see https://support.atlassian.com/bitbucket-cloud/docs/configure-bitbucket-pipelinesyml/
+    - step:
+        name: 'Deployment to Staging'
+        deployment: staging
+        script:
+          - echo "Your deployment to staging script goes here..."
+    - step:
+        name: 'Deployment to Production'
+        deployment: production
+        trigger: 'manual'
+        script:
+          - echo "Your deployment to production script goes here..."
