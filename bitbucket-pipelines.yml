@@ -11,11 +11,11 @@ pipelines:
       - step:
           name: 'MSDO trivy test'
           script:
-            - export DfdBackendServiceEnvironment="PPE"
+            # - export DfdBackendServiceEnvironment="PPE"
             - echo $DfdBackendServiceEnvironment
-            - export GDN_PUSH_TOKEN_TENANT_ID=$DFDENTRATENANTID
-            - export GDN_PUSH_TOKEN_CLIENT_ID=$DFDENTRACLIENTID
-            - export GDN_PUSH_TOKEN_CLIENT_SECRET=$DFDENTRACLIENTSECRET
+            # - export GDN_PUSH_TOKEN_TENANT_ID=$DFDENTRATENANTID
+            # - export GDN_PUSH_TOKEN_CLIENT_ID=$DFDENTRACLIENTID
+            # - export GDN_PUSH_TOKEN_CLIENT_SECRET=$DFDENTRACLIENTSECRET
             - curl -L -o ./msdo_linux.zip https://www.nuget.org/api/v2/package/Microsoft.Security.DevOps.Cli.linux-x64/
             - unzip ./msdo_linux.zip
             - chmod +x tools/guardian
