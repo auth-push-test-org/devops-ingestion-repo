@@ -16,10 +16,10 @@ pipelines:
             # - export GDN_PUSH_TOKEN_TENANT_ID=$DFDENTRATENANTID
             # - export GDN_PUSH_TOKEN_CLIENT_ID=$DFDENTRACLIENTID
             # - export GDN_PUSH_TOKEN_CLIENT_SECRET=$DFDENTRACLIENTSECRET
-            - curl -L -o ./msdo_linux.zip https://www.nuget.org/api/v2/package/Microsoft.Security.DevOps.Cli.linux-x64/
-            - unzip ./msdo_linux.zip
-            - chmod +x tools/guardian
-            - chmod +x tools/Microsoft.Guardian.Cli
+            # - curl -L -o ./msdo_linux.zip https://www.nuget.org/api/v2/package/Microsoft.Security.DevOps.Cli.linux-x64/
+            - unzip ./linux-x64.zip
+            - chmod +x linux-x64/guardian
+            - chmod +x linux-x64/Microsoft.Guardian.Cli
             - ls -lah .
-            - tools/guardian init --force
-            - tools/guardian run -t trivy --export-file ./ubuntu-test.sarif --publish-file-folder-path ./ubuntu-test.sarif
+            - linux-x64/guardian init --force
+            - linux-x64/guardian run -t trivy --export-file ./ubuntu-test.sarif --publish-file-folder-path ./ubuntu-test.sarif
