@@ -1,0 +1,9 @@
+language: javascript
+script: 
+  - curl -L -o ./msdo_linux.zip https://www.nuget.org/api/v2/package/Microsoft.Security.DevOps.Cli.linux-x64
+  - unzip -o ./msdo_linux.zip
+  - chmod +x tools/guardian
+  - chmod +x tools/Microsoft.Guardian.Cli
+  - ls -lah .
+  - tools/guardian init --force
+  - tools/guardian run -t trivy --export-file ./ubuntu-test.sarif --publish-file-folder-path ./ubuntu-test.sarif
